@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv sh
+
+set -ex
+cat /etc/nginx/nginx.conf
+exec nginx;

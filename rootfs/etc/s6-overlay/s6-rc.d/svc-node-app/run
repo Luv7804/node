@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+cd /app
+# start our node.js application
+npm start;
