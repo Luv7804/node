@@ -24,7 +24,7 @@ jobs:
 
       - name: Create Tag
         id: tag
-        run: echo "tag=${{ github.ref_name }}-$(git rev-parse --short HEAD)-$(date +%s)" >> $GITHUB_OUTPUT
+        run: echo "tag=${{ github.ref_name }}-$NODE_VERSION-$(git rev-parse --short HEAD)-$(date +%s)" >> $GITHUB_OUTPUT
         timeout-minutes: 5
 
       # - name: Login to Docker Hub
@@ -38,7 +38,6 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          run: echo $NODE_VERSION
           build-args: |
             NODE_VERSION=$NODE_VERSION
             ALPINE_VERSION=$ALPINE_VERSION
