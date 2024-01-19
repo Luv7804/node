@@ -39,8 +39,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           build-args: |
-            NODE_VERSION=${{ env.NODE_VERSION }}
-            ALPINE_VERSION=${{ env.ALPINE_VERSION }}
+            NODE_VERSION=$NODE_VERSION
+            ALPINE_VERSION=$ALPINE_VERSION
           context: .
           push: false
           tags: "improwised/docker-nodejs-base:${{ steps.tag.outputs.tag }}"
